@@ -17,8 +17,12 @@ if ($_POST['submit'] === 'OK' && $_POST['newpw'])
                 $array[$i]['passwd'] = $newpw;
                 $data = serialize($array);
                 file_put_contents($filename, $data);
-                echo "Password successfully changed\n";
-                echo "<a href='index.php'>Home</a>";
+                ?>
+                <p>Password successfully changed.</p>
+                <form action="index.php">
+		        <input type="submit" value="Return" />
+		        </form>
+                <?php
                 $success = 1;
             }
         }
