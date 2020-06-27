@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once 'admin/is_admin.php';
 
 $user = $_SESSION['logged_on_user'] ? $_SESSION['logged_on_user'] : "";
 ?>
@@ -39,7 +40,18 @@ $user = $_SESSION['logged_on_user'] ? $_SESSION['logged_on_user'] : "";
 			<form action="modif.html">
 				<input type="submit" value="Change password" />
 			</form>
+			<form action="delete.html">
+				<input type="submit" value="Delete user" />
+			</form>
 			<?php
+			if (is_admin($user))
+			{
+				?>
+				<form action="admin/admin.php">
+				<input type="submit" value="Admin panel" />
+				</form>
+				<?php
+			}
 		}
 		?>
 		<form action="product_page.php">
