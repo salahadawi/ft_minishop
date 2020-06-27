@@ -5,16 +5,12 @@ session_start();
 if (auth($_POST['login'], $_POST['passwd']) === TRUE)
 {
     $_SESSION['logged_on_user'] = $_POST['login'];
-    ?>
-    <form>
-        <p>You are logged in!</p>
-        <input name="logout" formaction="logout.php" type="submit" value="Log out" />
-    </form>
-    <?php
+    header("Location: index.php");
 }
 else
 {
     $_SESSION['logged_on_user'] = "";
-    exit("ERROR\n");
+    echo "ERROR: Wrong username or password\n";
+    echo "<a href='index.php'>Go back</a>";
 }
 ?>

@@ -1,6 +1,4 @@
 <?php
-header("Location: index.html");
-
 if ($_POST['submit'] === 'OK' && $_POST['newpw'])
 {
     $filename = '../private/passwd';
@@ -19,13 +17,30 @@ if ($_POST['submit'] === 'OK' && $_POST['newpw'])
                 $array[$i]['passwd'] = $newpw;
                 $data = serialize($array);
                 file_put_contents($filename, $data);
-                echo "OK\n";
-                exit;
+                echo "Password successfully changed\n";
+                echo "<a href='index.php'>Home</a>";
+                $success = 1;
             }
         }
         $i++;
     }
+    if (!$success)
+    {
+        ?>
+        <p>ERROR: Wrong password</p>
+        <form action="modif.html">
+		<input type="submit" value="Try again" />
+		</form>
+        <?php
+    }
 }
 else
-    exit("ERROR\n");
+{
+    ?>
+        <p>ERROR: Make sure that all fields are filled.</p>
+        <form action="modif.html">
+		<input type="submit" value="Try again" />
+		</form>
+    <?php
+}
 ?>

@@ -1,14 +1,14 @@
 <?php
-header("Location: index.html");
+header("Location: index.php");
 
 if ($_POST['submit'] === 'OK')
 {
     $directory = '../private';
     $filename = '../private/passwd';
-    if (file_exists($directory) === FALSE)
-        mkdir($directory);
     if ($_POST['login'] && $_POST['passwd'])
     {
+        if (file_exists($directory) === FALSE)
+            mkdir($directory);
         $login = $_POST['login'];
         $passwd = hash('whirlpool', $_POST['passwd']);
         if (file_exists($filename))
@@ -18,7 +18,7 @@ if ($_POST['submit'] === 'OK')
             foreach ($array as $key => $value)
             {
                 if ($value['login'] === $login)
-                    exit("ERROR\n");
+                    echo "User $login exists.\n";
             }
         }
         $info['login'] = $login;
@@ -26,11 +26,21 @@ if ($_POST['submit'] === 'OK')
         $array[] = $info;
         $data = serialize($array);
         file_put_contents($filename, $data);
-        echo "OK\n";
+        ?>
+        <p>User <?$login?> created.</p>
+        <form action="index.php">
+		<input type="submit" value="Return" />
+		</form>
+        <?php
     }
     else
-        exit("ERROR\n");
+    {
+        ?>
+        <p>ERROR: Login and/or password missing</p>
+        <form action="create.html">
+		<input type="submit" value="Try again" />
+		</form>
+        <?php
+    }
 }
-else
-    exit("ERROR\n");
 ?>
