@@ -10,7 +10,11 @@ if (auth($_POST['login'], $_POST['passwd']) === TRUE)
 else
 {
     $_SESSION['logged_on_user'] = "";
-    echo "ERROR: Wrong username or password\n";
-    echo "<a href='index.php'>Go back</a>";
+    ?>
+    <p>ERROR: Wrong username or password.</p>
+    <form action="index.php">
+		<input type="submit" value="Return" />
+	</form>
+	<?php
 }
 ?>
