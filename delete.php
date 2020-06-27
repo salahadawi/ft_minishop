@@ -17,10 +17,8 @@ if ($_POST['submit'] === 'Delete' && auth($_SESSION['logged_on_user'], $_POST['p
 			array_splice($array, $i, 1);
 			break ;
 		}
-		echo "!\n";
 		$i++;
 	}
-	print_r($array);
 	$data = serialize($array);
 	file_put_contents($filename, $data);
 }
