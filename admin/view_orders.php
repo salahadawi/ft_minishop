@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+	<head>
+</head>
 <body>
 <h2>View orders</h2>
 <?php
@@ -18,7 +20,9 @@ $dir = array_diff(scandir("orders"), array('..', '.'));
 foreach ($dir as $file)
 {
 	$name = substr($file, 0, strpos($file, "_order"));
-	print($name."'s order: <br />");
+	?>
+	<p style="background-color: pink; border: 1px solid black; padding-left: 1%"><?=$name?>'s order:</p>
+	<?php
 	$cart = csv_to_array($directory."/".$file);
 	$total_price = 0;
 	foreach ($cart as $item)
