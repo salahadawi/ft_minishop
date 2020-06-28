@@ -45,9 +45,10 @@ if ($_POST['submit'] === 'OK')
 <!DOCTYPE html>
 <html>
     <body>
+        <h2>Create account</h2>
         <form action="" method="post">
             Username: <input type="text" name="login" value="" />
-            <br />
+            <br /><br />
             Password: <input type="text" name="passwd" value="" />
             Level: <input type="text" name="level" value="" />
             <input type="submit" name="submit" value="OK" />
