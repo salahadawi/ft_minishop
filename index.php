@@ -221,6 +221,16 @@ function check_item_deleted($item, $products)
 	return (1);
 }
 
+function get_latest_price($item, $products)
+{
+	foreach ($products as $product_item)
+	{
+		if ($product_item['name'] == $item['name'])
+			return ($product_item['price']);
+	}
+	return (0);
+}
+
 	$products = csv_to_array2("products.csv");
 	echo "<h2>Shopping Cart: </h2><br />";
 	if ($_SESSION['logged_on_user'])
@@ -240,8 +250,8 @@ function check_item_deleted($item, $products)
 						<input type="hidden" name="page" value="product_page">
 					</form>
 				<?php
-				echo "Price: ".($item['price'] * $item['quantity'])."$ <br /><br />";
-				$total_price += $item['price'] * $item['quantity'];
+				echo "Price: ".(get_latest_price($item, $products) * $item['quantity'])."$ <br /><br />";
+				$total_price += get_latest_price($item, $products) * $item['quantity'];
 			}
 		}
 		unset($item);
