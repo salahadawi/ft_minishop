@@ -1,7 +1,7 @@
 <?php
 function    is_admin($user)
 {
-    $filename = '../private/passwd';
+    $filename = 'private/passwd';
     $str = file_get_contents($filename);
     $array = unserialize($str);
 
