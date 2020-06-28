@@ -13,6 +13,7 @@
 include("../functions.php");
 session_start();
 
+
 $products = csv_to_array_with_format("../products.csv");
 $format = array_shift($products);
 
