@@ -4,10 +4,10 @@
 <p>View orders</p>
 <?php
 
-include("../functions.php");
+include("functions.php");
 session_start();
-$directory = "../orders";
-$dir = array_diff(scandir("../orders"), array('..', '.'));
+$directory = "orders";
+$dir = array_diff(scandir("orders"), array('..', '.'));
 foreach ($dir as $file)
 {
 	$name = substr($file, 0, strpos($file, "_order"));
