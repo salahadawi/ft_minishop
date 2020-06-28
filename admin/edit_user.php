@@ -85,12 +85,5 @@ if ($_POST['submit'] === "Change" && $_POST['olduser'] && $_POST['newuser'])
 		<input type="submit" name="submit" value="Change" />
 	</form>
 	<br />
-	<form action="admin.php">
-        <input type="submit" value="Return" />
-	</form>
-	<br />
-	<form action="../logout.php">
-		<input type="submit" value="Log out" />
-	</form>
 </body>
 </html>

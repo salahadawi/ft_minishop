@@ -24,8 +24,5 @@ foreach ($dir as $file)
 if (empty($dir))
 	print("No orders have been placed yet!")
 ?>
-<form action="admin.php">
-    <input type="submit" value="Return" />
-</form>
 </body>
 </html>

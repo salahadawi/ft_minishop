@@ -19,8 +19,5 @@ if (($h = fopen("products.csv", "r")) !== FALSE)
 <html>
 <body>
 	<h2>Edit product</h2>
-	<form action="admin.php">
-        <input type="submit" value="Return" />
-	</form>
 </body>
 </html>

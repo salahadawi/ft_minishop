@@ -12,9 +12,6 @@ else
     $_SESSION['logged_on_user'] = "";
     ?>
     <p>ERROR: Wrong username or password.</p>
-    <form action="index.php">
-		<input type="submit" value="Return" />
-	</form>
 	<?php
 }
 ?>

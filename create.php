@@ -34,12 +34,7 @@ if ($_POST['submit'] === 'OK')
             $array[] = $info;
             $data = serialize($array);
             file_put_contents($filename, $data);
-            echo "User $login created."
-            ?>
-            <form action="index.php">
-		    <input type="submit" value="Log in" />
-		    </form>
-            <?php
+            echo "User $login created.";
         }
     }
     else
@@ -56,9 +51,6 @@ if ($_POST['submit'] === 'OK')
             Password: <input type="text" name="passwd" value="" />
             Level: <input type="text" name="level" value="" />
             <input type="submit" name="submit" value="OK" />
-        </form>
-        <form action="index.php">
-            <input type="submit" value="Return" />
         </form>
     </body>
 </html>
