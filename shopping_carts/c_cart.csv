@@ -1,0 +1,4 @@
+name,price,quantity,category
+banana,1,1,fruit
+watermelon,9,2,fruit;berry
+strawberry,7,4,berry

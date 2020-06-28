@@ -17,34 +17,31 @@ if ($_POST['submit'] === 'OK' && $_POST['newpw'])
                 $array[$i]['passwd'] = $newpw;
                 $data = serialize($array);
                 file_put_contents($filename, $data);
-                ?>
-                <p>Password successfully changed.</p>
-                <form action="index.php">
-		        <input type="submit" value="Return" />
-		        </form>
-                <?php
+                echo "Password successfully changed.";
                 $success = 1;
             }
         }
         $i++;
     }
     if (!$success)
-    {
-        ?>
-        <p>ERROR: Wrong password</p>
-        <form action="modif.html">
-		<input type="submit" value="Try again" />
-		</form>
-        <?php
-    }
+        echo "ERROR: Wrong password.";
 }
-else
-{
-    ?>
-        <p>ERROR: Make sure that all fields are filled.</p>
-        <form action="modif.html">
-		<input type="submit" value="Try again" />
-		</form>
-    <?php
-}
+else if ($_POST['submit'] && (!$_POST['oldpw'] || !$_POST['newpw']))
+    echo "ERROR: Make sure that all fields are filled.";
 ?>
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action="" method="post">
+            Username: <input type="text" name="login" value="" />
+            <br />
+            Old password: <input type="text" name="oldpw" value="" />
+            New password: <input type="text" name="newpw" value="" />
+            <input type="submit" name="submit" value="OK" />
+        </form>
+        <form action="index.php">
+            <input type="submit" value="Return" />
+        </form>
+    </body>
+</html>

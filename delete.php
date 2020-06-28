@@ -1,6 +1,5 @@
 <?php
 require_once 'auth.php';
-header("Location: logout.php");
 session_start();
 if ($_POST['submit'] === 'Delete' && auth($_SESSION['logged_on_user'], $_POST['passwd']))
 {
@@ -20,5 +19,19 @@ if ($_POST['submit'] === 'Delete' && auth($_SESSION['logged_on_user'], $_POST['p
 	}
 	$data = serialize($array);
 	file_put_contents($filename, $data);
+	header("Location: logout.php");
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action="" method="post">
+            Password: <input type="text" name="passwd" value="" />
+            <input type="submit" name="submit" value="Delete" />
+        </form>
+        <form action="index.php">
+            <input type="submit" value="Return" />
+        </form>
+    </body>
+</html>
