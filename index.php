@@ -25,7 +25,7 @@ $user = $_SESSION['logged_on_user'] ? $_SESSION['logged_on_user'] : "";
 			Password: <input type="text" name="passwd" value="" />
 			<input type="submit" name="connect" value="Connect" />
 			</form>
-			<form action="create.html">
+			<form action="create.php">
 			<input type="submit" value="Create account" />
 			</form>
 		<?php
@@ -34,9 +34,6 @@ $user = $_SESSION['logged_on_user'] ? $_SESSION['logged_on_user'] : "";
 		{
 			echo "Hello $user!<br>";
 			?>
-			<form action="logout.php">
-				<input type="submit" value="Log out" />
-			</form>
 			<form action="modif.html">
 				<input type="submit" value="Change password" />
 			</form>
@@ -52,6 +49,12 @@ $user = $_SESSION['logged_on_user'] ? $_SESSION['logged_on_user'] : "";
 				</form>
 				<?php
 			}
+			?>
+			<br />
+			<form action="logout.php">
+				<input type="submit" value="Log out" />
+			</form>
+			<?php
 		}
 		?>
 		<form action="product_page.php">

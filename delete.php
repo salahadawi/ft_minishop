@@ -4,7 +4,6 @@ header("Location: logout.php");
 session_start();
 if ($_POST['submit'] === 'Delete' && auth($_SESSION['logged_on_user'], $_POST['passwd']))
 {
-	echo "here\n";
 	$filename = '../private/passwd';
     $str = file_get_contents($filename);
 	$array = unserialize($str);

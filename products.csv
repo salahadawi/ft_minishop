@@ -1,0 +1,10 @@
+name,price,quantity,category
+banana,1,5,fruit
+apple,2,5,fruit
+orange,3,5,fruit
+carrot,4,5,vegetable
+kiwi,5,5,fruit
+potato,6,5,vegetable
+strawberry,7,5,berry
+blueberry,8,5,berry
+watermelon,9,2,fruit;berry

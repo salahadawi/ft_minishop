@@ -1,5 +1,5 @@
 <?php
-header("Location: index.php");
+// header("Location: index.php");
 
 if ($_POST['submit'] === 'OK')
 {
@@ -22,12 +22,7 @@ if ($_POST['submit'] === 'OK')
                 if ($value['login'] === $login)
                 {
                     $success = 0;
-                    ?>
-                    <p>User <?$login?> already exists.</p>
-                    <form action="create.html">
-		            <input type="submit" value="Try again" />
-		            </form>
-                    <?php
+                    echo "User $login already exists. Try with another username.\n";
                 }
             }
         }
@@ -39,22 +34,31 @@ if ($_POST['submit'] === 'OK')
             $array[] = $info;
             $data = serialize($array);
             file_put_contents($filename, $data);
+            echo "User $login created."
             ?>
-            <p>User <?$login?> created.</p>
             <form action="index.php">
-		    <input type="submit" value="Return" />
+		    <input type="submit" value="Log in" />
 		    </form>
             <?php
         }
     }
     else
-    {
-        ?>
-        <p>ERROR: Login and/or password missing</p>
-        <form action="create.html">
-		<input type="submit" value="Try again" />
-		</form>
-        <?php
-    }
+        echo "ERROR: Login and/or password missing.\n";
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action="" method="post">
+            Username: <input type="text" name="login" value="" />
+            <br />
+            Password: <input type="text" name="passwd" value="" />
+            Level: <input type="text" name="level" value="" />
+            <input type="submit" name="submit" value="OK" />
+        </form>
+        <form action="index.php">
+            <input type="submit" value="Return" />
+        </form>
+    </body>
+</html>

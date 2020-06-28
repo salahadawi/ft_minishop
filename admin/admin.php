@@ -20,5 +20,12 @@ session_start();
 		<form action="edit_category.php">
 		    <input type="submit" value="Edit or remove category" />
 		</form>
+		<br />
+		<form action="../index.php">
+            <input type="submit" value="Return" />
+		</form>
+		<form action="../logout.php">
+			<input type="submit" value="Log out" />
+		</form>
 	</body>
 </html>
