@@ -110,7 +110,7 @@ foreach ($products as $item)
 			<form action="index.php" method="GET">
 			Amount: 
 			<input type="number" name="quantity" min="1" max=<?= $item['quantity'] ?> value="1">
-			<button type="submit" name="submit" value=<?= $item['name'] ?>>Add to basket</button>
+			<button type="submit" name="submit" value=<?= $item['name'] ?>>Add to cart</button>
 			<input type="hidden" name="page" value="product_page">
 			</form>
 			</div>
