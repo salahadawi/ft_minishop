@@ -26,7 +26,7 @@ if (!$_GET['page'])
 		{
 			?>
 			<form action="index.php?page=login" method="post">
-			<p>Login</p>
+			<h2>Login</h2>
 			Username: <input type="text" name="login" value="" />
 			<br />
 			Password: <input type="text" name="passwd" value="" />
