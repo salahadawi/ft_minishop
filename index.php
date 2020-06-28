@@ -91,7 +91,7 @@ function csv_to_array2($filename)
 	return ($arr);
 }
 		$products = csv_to_array2("products.csv");
-		echo "Shopping Cart: <br />";
+		echo "<h2>Shopping Cart: </h2><br />";
 	if ($_SESSION['logged_on_user'])
 	{
 		$cart = csv_to_array2("shopping_carts/".$_SESSION['logged_on_user']."_cart.csv");
