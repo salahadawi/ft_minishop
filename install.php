@@ -14,7 +14,8 @@
 
     $info['login'] = 'admin';
     $info['passwd'] = hash('whirlpool', 'admin');
-    $info['level'] = 2;
+	$info['level'] = 2;
+	$info['date'] = date('d.m.y h:i:s', time());
     $array[] = $info;
     $data = serialize($array);
     file_put_contents($filename, $data);

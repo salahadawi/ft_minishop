@@ -11,7 +11,6 @@ if ($_POST['submit'] === 'OK')
             mkdir($directory);
         $login = $_POST['login'];
         $passwd = hash('whirlpool', $_POST['passwd']);
-        $level = (int)$_POST['level'];
         $success = 1;
         if (file_exists($filename))
         {
@@ -30,7 +29,8 @@ if ($_POST['submit'] === 'OK')
         {
             $info['login'] = $login;
             $info['passwd'] = $passwd;
-            $info['level'] = $level;
+            $info['level'] = 1;
+            $info['date'] = date('d.m.y h:i:s', time());
             $array[] = $info;
             $data = serialize($array);
             file_put_contents($filename, $data);
@@ -50,7 +50,6 @@ if ($_POST['submit'] === 'OK')
             Username: <input type="text" name="login" value="" />
             <br /><br />
             Password: <input type="text" name="passwd" value="" />
-            Level: <input type="text" name="level" value="" />
             <input type="submit" name="submit" value="OK" />
         </form>
     </body>
