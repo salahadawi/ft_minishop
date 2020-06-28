@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html>
 <body>
-	<h2>Manage users</h2>
 	<form action="" method="post">
-		<p>Delete user</p>
+		<h2>Delete user</h2>
 		Username: <input type="text" name="login" value="" />
 		<input type="submit" name="submit" value="Delete" />
 	</form>
 	<br />
 	<form action="" method="post">
-		<p>Change username</p>
+		<h2>Change username</h2>
 		Username: <input type="text" name="olduser" value="" />
 		New username: <input type="text" name="newuser" value="" />
 		<input type="submit" name="submit" value="Change" />
 	</form>
 	<br />
 	<form action="" method="post">
-		<p>Upgrade user to admin</p>
+		<h2>Upgrade user to admin</h2>
 		Username: <input type="text" name="login" value="" />
 		<input type="submit" name="submit" value="Upgrade" />
 	</form>

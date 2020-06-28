@@ -38,7 +38,7 @@ if (!$_GET['page'])
 		}
 		else
 		{
-			echo "Hello $user!<br>";
+			echo "<h2>Hello $user!<br></h2>";
 			?>
 			<a href="index.php?page=modif">Change password</a>
 			<br />
@@ -49,7 +49,7 @@ if (!$_GET['page'])
 			if (is_admin($user))
 			{
 				?>
-				<h3>The Admin Panel</h3>
+				<h2>The Admin Panel</h2>
 				<a href="index.php?page=admin/view_orders">View orders</a>
 				<br />
 				<a href="index.php?page=admin/view_users">View users</a>
