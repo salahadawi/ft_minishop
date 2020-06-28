@@ -26,11 +26,16 @@ function csv_to_array_with_format($filename)
 
 // $_SESSION['logged_on_user'] = "sadawi";
 
+$cart_directory = "shopping_carts";
+$orders_directory = "orders";
+
 function save_item_to_cart($item, $products, $amount)
 {
 	if ($_SESSION['logged_on_user'])
 	{
-		print_r(str_getcsv(file("products.csv")));
+		//print_r(str_getcsv(file("products.csv")));
+		if (file_exists($cart_directory) === FALSE)
+            mkdir($cart_directory);
 		if (!file_exists("shopping_carts/".$_SESSION['logged_on_user']."_cart.csv"))
 		{
 			$handle = fopen("products.csv", "r");
@@ -131,6 +136,8 @@ if ($_GET['category'])
 
 if ($_GET['submit'] === "order")
 {
+	if (file_exists($orders_directory) === FALSE)
+            mkdir($orders_directory);
 	if ($_SESSION['logged_on_user'])
 	{
 		copy("shopping_carts/".$_SESSION['logged_on_user']."_cart.csv",
