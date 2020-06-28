@@ -1,7 +1,7 @@
 <?php
 function    auth($login, $passwd)
 {
-    $filename = '../private/passwd';
+    $filename = 'private/passwd';
     $str = file_get_contents($filename);
     $array = unserialize($str);
 
