@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<p>View orders</p>
+<h3>View orders</h3>
 <?php
 
 include("functions.php");
