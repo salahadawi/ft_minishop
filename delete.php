@@ -29,7 +29,7 @@ if ($_POST['submit'] === 'Delete' && auth($_SESSION['logged_on_user'], $_POST['p
     <h2>Delete user</h2>
         <form action="" method="post">
             Password: <input type="text" name="passwd" value="" />
-            <input type="submit" name="submit" value="Delete" />
+            <input class="button" type="submit" name="submit" value="Delete" />
         </form>
     </body>
 </html>

@@ -4,20 +4,20 @@
 	<form action="" method="post">
 		<h2>Delete user</h2>
 		Username: <input type="text" name="login" value="" />
-		<input type="submit" name="submit" value="Delete" />
+		<input class="delete" type="submit" name="submit" value="Delete" />
 	</form>
 	<br />
 	<form action="" method="post">
 		<h2>Change username</h2>
 		Username: <input type="text" name="olduser" value="" />
 		New username: <input type="text" name="newuser" value="" />
-		<input type="submit" name="submit" value="Change" />
+		<input class="button" type="submit" name="submit" value="Change" />
 	</form>
 	<br />
 	<form action="" method="post">
 		<h2>Upgrade user to admin</h2>
 		Username: <input type="text" name="login" value="" />
-		<input type="submit" name="submit" value="Upgrade" />
+		<input class="button" type="submit" name="submit" value="Upgrade" />
 	</form>
 	<br />
 	<br />

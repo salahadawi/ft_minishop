@@ -54,7 +54,7 @@ if ($_POST['submit'] === 'OK')
             Full name: <input type="text" name="fullname" value="" />
             <br /><br />
             <span style="color: red">*</span> Password: <input type="text" name="passwd" value="" />
-            <input type="submit" name="submit" value="OK" />
+            <input class="button" type="submit" name="submit" value="OK" />
         </form>
     </body>
 </html>

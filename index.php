@@ -30,8 +30,9 @@ if (!$_GET['page'])
 			Username: <input type="text" name="login" value="" />
 			<br />
 			Password: <input type="text" name="passwd" value="" />
-			<input type="submit" name="connect" value="Log in" />
+			<input class="button" type="submit" name="connect" value="Log in" />
 			</form>
+			<br />
 			<a href="index.php?page=create">Create account</a>
 			<br />
 		<?php
@@ -246,7 +247,7 @@ function get_latest_price($item, $products)
 				?>
 					<form action="index.php" method="GET">
 						<input type="number" name="new_quantity" min="0" max=<?= get_item_max_quantity2($products, $item); ?> value=<?= $item['quantity'] ?>>
-						<button type="submit" name="submit" value=<?= $item['name'] ?>>Update quantity</button>
+						<button class="button" type="submit" name="submit" value=<?= $item['name'] ?>>Update quantity</button>
 						<input type="hidden" name="page" value="product_page">
 					</form>
 				<?php
@@ -266,8 +267,8 @@ function get_latest_price($item, $products)
 			{
 				echo $item['name'].", quantity: " ?>
 				<form action="index.php" method="GET">
-					<input type="number" name="new_quantity" min="0" max=<?= $item['quantity'] ?> value=<?= $_SESSION['basket'][$item['name']] ?>>
-					<button type="submit" name="submit" value=<?= $item['name'] ?>>Update quantity</button>
+					<input class="button" type="number" name="new_quantity" min="0" max=<?= $item['quantity'] ?> value=<?= $_SESSION['basket'][$item['name']] ?>>
+					<button class="button" type="submit" name="submit" value=<?= $item['name'] ?>>Update quantity</button>
 					<input type="hidden" name="page" value="product_page">
 				</form>
 				<?php
@@ -283,11 +284,11 @@ function get_latest_price($item, $products)
 		$order_button = "Update my order";
 	?>
 		<form action="index.php" method="GET">
-		<button type="submit" name="submit" value="clear">Clear basket</button>
+		<button class="delete" type="submit" name="submit" value="clear">Clear basket</button>
 		<input type="hidden" name="page" value="product_page">
 		</form>
 		<form action="index.php" method="GET">
-		<button type="submit" name="submit" value="order"><?= $order_button ?>
+		<button class="add" type="submit" name="submit" value="order"><?= $order_button ?>
 		</button>
 		<input type="hidden" name="page" value="product_page">
 		</form>

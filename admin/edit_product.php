@@ -76,7 +76,7 @@ if ($_GET['submit'])
 		<br /> Image link:
 		<input type="text" name="image">
 		<input type="hidden" name="page" value="admin/edit_product">
-		<button type="submit" name="new_item" value="OK">Add product</button>
+		<button class="add" type="submit" name="new_item" value="OK">Add product</button>
 </form>
 <br />
 
