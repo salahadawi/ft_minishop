@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
     <body>
+        <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        </head>
     <h2>Change password</h2>
         <form action="" method="post">
             Old password: <input type="text" name="oldpw" value="" />
             New password: <input type="text" name="newpw" value="" />
-            <input type="submit" name="submit" value="OK" />
+            <input class="button" type="submit" name="submit" value="OK" />
         </form>
     </body>
 </html>

@@ -1,25 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<link rel="stylesheet" href="https://use.typekit.net/qst8qoi.css">
-	<style>
-		li {
-			display: inline;
-		}
-		ul li {
-			background-color: beige;
-			width: 150px;
-			height: 25px;
-			border: 1px solid black;
-			text-align: center;
-			float: left;
-			position: relative;
-			margin-right: 1%;
-			color: black;
-			padding: auto;
-			font-family: roboto, sans-serif;
-		}
-		</style>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <h2>View users</h2>
