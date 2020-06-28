@@ -29,6 +29,7 @@ if ($_GET['new_item'])
 		$new_item['price'] = $_GET['price'];
 		$new_item['quantity'] = $_GET['quantity'];
 		$new_item['category'] = $_GET['category'];
+		$new_item['image'] = $_GET['image'];
 		$products[] = $new_item;
 		$handle = fopen("products.csv", "w");
 		fputcsv($handle, $format);
@@ -51,6 +52,7 @@ if ($_GET['submit'])
 				$item['price'] = $_GET['price'];
 				$item['quantity'] = $_GET['quantity'];
 				$item['category'] = $_GET['category'];
+				$item['image'] = $_GET['image'];
 			}
 		}
 	}
@@ -71,6 +73,8 @@ if ($_GET['submit'])
 		<input type="number" name="quantity" min="1" max="99999">
 		<br /> Category:
 		<input type="text" name="category">
+		<br /> Image link:
+		<input type="text" name="image">
 		<input type="hidden" name="page" value="admin/edit_product">
 		<button type="submit" name="new_item" value="OK">Add product</button>
 </form>
@@ -92,6 +96,8 @@ foreach ($products as $item)
 		<input type="number" name="quantity" min="0" max="99999" value= <?= $item['quantity'] ?>>
 		<br /> Category:
 		<input type="text" name="category" value= <?= $item['category'] ?>>
+		<br /> Image link:
+		<input type="text" name="image" value= <?= $item['image'] ?>>
 		<input type="hidden" name="page" value="admin/edit_product">
 		<button type="submit" name="submit" value=<?= $item['name'] ?>>Update product</button>
 		</form>
