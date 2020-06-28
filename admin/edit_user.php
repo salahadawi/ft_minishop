@@ -1,3 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<form action="" method="post">
+		<h2>Delete user</h2>
+		Username: <input type="text" name="login" value="" />
+		<input type="submit" name="submit" value="Delete" />
+	</form>
+	<br />
+	<form action="" method="post">
+		<h2>Change username</h2>
+		Username: <input type="text" name="olduser" value="" />
+		New username: <input type="text" name="newuser" value="" />
+		<input type="submit" name="submit" value="Change" />
+	</form>
+	<br />
+	<form action="" method="post">
+		<h2>Upgrade user to admin</h2>
+		Username: <input type="text" name="login" value="" />
+		<input type="submit" name="submit" value="Upgrade" />
+	</form>
+	<br />
+	<br />
+	<br />
+</body>
+</html>
+
 <?php
 session_start();
 
@@ -94,29 +121,3 @@ if ($_POST['submit'] === "Change" && $_POST['olduser'] && $_POST['newuser'])
 if ($_POST['submit'] === "Upgrade" && $_POST['login'])
 	make_admin($_POST['login']);
 ?>
-
-<!DOCTYPE html>
-<html>
-<body>
-	<h2>Edit user</h2>
-	<form action="" method="post">
-		<p>Delete user</p>
-		Username: <input type="text" name="login" value="" />
-		<input type="submit" name="submit" value="Delete" />
-	</form>
-	<br />
-	<form action="" method="post">
-		<p>Change username</p>
-		Username: <input type="text" name="olduser" value="" />
-		New username: <input type="text" name="newuser" value="" />
-		<input type="submit" name="submit" value="Change" />
-	</form>
-	<br />
-	<form action="" method="post">
-		<p>Upgrade user to admin</p>
-		Username: <input type="text" name="login" value="" />
-		<input type="submit" name="submit" value="Upgrade" />
-	</form>
-	<br />
-</body>
-</html>

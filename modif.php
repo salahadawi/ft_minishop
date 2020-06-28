@@ -1,8 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <h2>Change password</h2>
+        <form action="" method="post">
+            Old password: <input type="text" name="oldpw" value="" />
+            New password: <input type="text" name="newpw" value="" />
+            <input type="submit" name="submit" value="OK" />
+        </form>
+    </body>
+</html>
+
 <?php
 if ($_POST['submit'] === 'OK' && $_POST['newpw'])
 {
     $filename = '../private/passwd';
-    $login = $_POST['login'];
+    $login = $_SESSION['logged_on_user'];
     $oldpw = hash('whirlpool', $_POST['oldpw']);
     $newpw = hash('whirlpool', $_POST['newpw']);
     $str = file_get_contents($filename);
@@ -29,16 +41,3 @@ if ($_POST['submit'] === 'OK' && $_POST['newpw'])
 else if ($_POST['submit'] && (!$_POST['oldpw'] || !$_POST['newpw']))
     echo "ERROR: Make sure that all fields are filled.";
 ?>
-
-<!DOCTYPE html>
-<html>
-    <body>
-        <form action="" method="post">
-            Username: <input type="text" name="login" value="" />
-            <br />
-            Old password: <input type="text" name="oldpw" value="" />
-            New password: <input type="text" name="newpw" value="" />
-            <input type="submit" name="submit" value="OK" />
-        </form>
-    </body>
-</html>
