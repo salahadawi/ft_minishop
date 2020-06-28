@@ -35,7 +35,7 @@ function save_item_to_cart($item, $products, $amount)
 	{
 		//print_r(str_getcsv(file("products.csv")));
 		if (file_exists($cart_directory) === FALSE)
-            mkdir($cart_directory);
+			mkdir("shopping_carts");
 		if (!file_exists("shopping_carts/".$_SESSION['logged_on_user']."_cart.csv"))
 		{
 			$handle = fopen("products.csv", "r");
