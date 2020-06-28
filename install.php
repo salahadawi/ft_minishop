@@ -13,7 +13,8 @@
         mkdir($directory);
 
     $info['login'] = 'admin';
-    $info['passwd'] = hash('whirlpool', 'admin');
+	$info['passwd'] = hash('whirlpool', 'admin');
+	$info['fullname'] = 'admin';
 	$info['level'] = 2;
 	$info['date'] = date('d.m.y h:i:s', time());
     $array[] = $info;
