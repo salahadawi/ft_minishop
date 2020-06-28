@@ -14,23 +14,27 @@ $format = array_shift($products);
 
 if ($_GET['new_item'])
 {
+	$found = 0;
 	foreach ($products as $item)
 	{
 		if ($_GET['name'] === $item['name'])
 		{
 			echo "<script>alert('Product already exists!');</script>";
-			return;
+			$found = 1;
 		}
 	}
-	$new_item['name'] = $_GET['name'];
-	$new_item['price'] = $_GET['price'];
-	$new_item['quantity'] = $_GET['quantity'];
-	$new_item['category'] = $_GET['category'];
-	$products[] = $new_item;
-	$handle = fopen("products.csv", "w");
-	fputcsv($handle, $format);
-	foreach ($products as $item)
-		fputcsv($handle, $item);
+	if (!$found)
+	{
+		$new_item['name'] = $_GET['name'];
+		$new_item['price'] = $_GET['price'];
+		$new_item['quantity'] = $_GET['quantity'];
+		$new_item['category'] = $_GET['category'];
+		$products[] = $new_item;
+		$handle = fopen("products.csv", "w");
+		fputcsv($handle, $format);
+		foreach ($products as $item)
+			fputcsv($handle, $item);
+	}
 }
 
 if ($_GET['submit'])
