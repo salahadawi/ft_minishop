@@ -57,8 +57,6 @@ if (!$_GET['page'])
 				<br />
 				<a href="index.php?page=admin/edit_product">Edit or remove product</a>
 				<br />
-				<a href="index.php?page=admin/edit_category">Edit or remove category</a>
-				<br />
 				<?php
 			}
 			?>
