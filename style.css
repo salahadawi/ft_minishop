@@ -1,8 +1,10 @@
+@import url("https://use.typekit.net/uhw2vpa.css");
 html {
 	scroll-behavior: smooth;
 }
 * {
 	box-sizing: border-box;
+	font-family: roboto, sans-serif;
 }
 #main {
 	display: flex;
@@ -33,4 +35,13 @@ a:active {
 	color: #982A15;
 	text-shadow: 1px 1px pink;
 	text-decoration: wavy;
+}
+h1 {
+	font-family: tomarik-display, sans-serif;
+	font-size: 60px;
+	text-align: center;
+}
+.fruits {
+	position: absolute;
+	left: 10%;
 }

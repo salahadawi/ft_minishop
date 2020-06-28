@@ -16,7 +16,8 @@ if (!$_GET['page'])
 	</head>
 	<body>
 	<header>
-		<h1>The Candy Shop</h1>
+		<img class="fruits" src="img/fuits.png">
+		<h1>Fruits For You!</h1>
 	</header>
 	<div id="main">
 		<div class="side">
@@ -56,8 +57,6 @@ if (!$_GET['page'])
 				<a href="index.php?page=admin/edit_user">Edit or remove user</a>
 				<br />
 				<a href="index.php?page=admin/edit_product">Edit or remove product</a>
-				<br />
-				<a href="index.php?page=admin/edit_category">Edit or remove category</a>
 				<br />
 				<?php
 			}
