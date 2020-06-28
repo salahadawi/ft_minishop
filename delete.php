@@ -30,8 +30,5 @@ if ($_POST['submit'] === 'Delete' && auth($_SESSION['logged_on_user'], $_POST['p
             Password: <input type="text" name="passwd" value="" />
             <input type="submit" name="submit" value="Delete" />
         </form>
-        <form action="index.php">
-            <input type="submit" value="Return" />
-        </form>
     </body>
 </html>

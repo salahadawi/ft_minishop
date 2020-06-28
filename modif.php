@@ -40,8 +40,5 @@ else if ($_POST['submit'] && (!$_POST['oldpw'] || !$_POST['newpw']))
             New password: <input type="text" name="newpw" value="" />
             <input type="submit" name="submit" value="OK" />
         </form>
-        <form action="index.php">
-            <input type="submit" value="Return" />
-        </form>
     </body>
 </html>
