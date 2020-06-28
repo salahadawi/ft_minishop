@@ -82,6 +82,7 @@ foreach ($products as $item)
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		text-align: center;
 		}
 
 		.flex-item{
@@ -100,9 +101,9 @@ foreach ($products as $item)
 		if (!$_SESSION['category'] || strpos($item['category'], $_SESSION['category']) !== false)
 		{
 			echo "<div class='flex-item'>";
-			echo $item['name']."<br />";
+			echo "<h2>".$item['name']."</h2><br />";
 			echo "<img src=".$item['image']."><br />";
-			echo "Price: ".$item['price']."\n<br />";
+			echo "Price: ".$item['price']."$\n<br />";
 			echo "Quantity: ".$item['quantity']."\n<br />";
 			echo "Category: ".$item['category']."\n<br />";
 			?>
