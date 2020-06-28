@@ -3,8 +3,8 @@
 
 if ($_POST['submit'] === 'OK')
 {
-    $directory = '../private';
-    $filename = '../private/passwd';
+    $directory = 'private';
+    $filename = 'private/passwd';
     if ($_POST['login'] && $_POST['passwd'])
     {
         if (file_exists($directory) === FALSE)

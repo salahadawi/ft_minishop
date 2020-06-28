@@ -3,7 +3,7 @@ require_once 'auth.php';
 session_start();
 if ($_POST['submit'] === 'Delete' && auth($_SESSION['logged_on_user'], $_POST['passwd']))
 {
-	$filename = '../private/passwd';
+	$filename = 'private/passwd';
     $str = file_get_contents($filename);
 	$array = unserialize($str);
 	$i = 0;

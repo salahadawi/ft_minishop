@@ -13,7 +13,7 @@
 <?php
 if ($_POST['submit'] === 'OK' && $_POST['newpw'])
 {
-    $filename = '../private/passwd';
+    $filename = 'private/passwd';
     $login = $_SESSION['logged_on_user'];
     $oldpw = hash('whirlpool', $_POST['oldpw']);
     $newpw = hash('whirlpool', $_POST['newpw']);
