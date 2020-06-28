@@ -68,7 +68,7 @@ foreach ($products as $item)
 	echo "Hello $user!";
 	?>
 	<br />
-	<form action="product_page.php">
+	<form action="index.php">
 	Category:
 	<select name="category">
 		<option value="all" selected>All</option>
@@ -77,6 +77,7 @@ foreach ($products as $item)
 			echo "<option value=".$category.">".$category."</option>";
 		?>
 	</select>
+	<input type="hidden" name="page" value="product_page">
 	<input type="submit">
 	</form>
 	<?php
@@ -89,10 +90,11 @@ foreach ($products as $item)
 			echo "Quantity: ".$item['quantity']."\n";
 			echo "Category: ".$item['category']."\n";
 			?>
-			<form action="product_page.php" method="GET">
+			<form action="index.php" method="GET">
 			Amount: 
 			<input type="number" name="quantity" min="1" max=<?= $item['quantity'] ?> value="1">
 			<button type="submit" name="submit" value=<?= $item['name'] ?>>Add to basket</button>
+			<input type="hidden" name="page" value="product_page">
 			</form>
 		<?php
 		}
@@ -106,9 +108,10 @@ foreach ($products as $item)
 		{
 			echo $item['name'].", quantity: "
 			?>
-				<form action="product_page.php" method="GET">
+				<form action="index.php" method="GET">
 					<input type="number" name="new_quantity" min="0" max=<?= get_item_max_quantity($products, $item); ?> value=<?= $item['quantity'] ?>>
 					<button type="submit" name="submit" value=<?= $item['name'] ?>>Update quantity</button>
+					<input type="hidden" name="page" value="product_page">
 				</form>
 				<br />
 			<?php
@@ -124,9 +127,10 @@ foreach ($products as $item)
 			if ($_SESSION['basket'][$item['name']])
 			{
 				echo $item['name'].", quantity: " ?>
-				<form action="product_page.php" method="GET">
+				<form action="index.php" method="GET">
 					<input type="number" name="new_quantity" min="0" max=<?= $item['quantity'] ?> value=<?= $_SESSION['basket'][$item['name']] ?>>
 					<button type="submit" name="submit" value=<?= $item['name'] ?>>Update quantity</button>
+					<input type="hidden" name="page" value="product_page">
 				</form>
 				<br />
 				<?php
@@ -140,15 +144,18 @@ foreach ($products as $item)
 	else
 		$order_button = "Update my order";
 	?>
-		<form action="product_page.php" method="GET">
+		<form action="index.php" method="GET">
 		<button type="submit" name="submit" value="clear">Clear basket</button>
+		<input type="hidden" name="page" value="product_page">
 		</form>
-		<form action="product_page.php" method="GET">
+		<form action="index.php" method="GET">
 		<button type="submit" name="submit" value="order"><?= $order_button ?>
 		</button>
+		<input type="hidden" name="page" value="product_page">
 		</form>
-		<form action="index.php">
-			<input type="submit" value="Return" />
+		<form action="index.php" method="GET">
+		<input type="submit" value="Return" />
+		<input type="hidden" name="page" value="product_page">
 		</form>
 		<?php
 	?>
