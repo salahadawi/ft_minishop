@@ -1,4 +1,2 @@
-name,price,quantity,category
-strawberry,7,1,berry
-blueberry,8,1,berry
-banana,1,1,fruit,https://images.emojiterra.com/google/android-10/512px/1f34c.png
+name,price,quantity,category,image
+Strawberry,8,1,Berry,https://images.emojiterra.com/google/android-10/512px/1f353.png
