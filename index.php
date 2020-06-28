@@ -225,8 +225,8 @@ function replace_basket($products)
 					<button type="submit" name="submit" value=<?= $item['name'] ?>>Update quantity</button>
 					<input type="hidden" name="page" value="product_page">
 				</form>
-				<br />
 			<?php
+			echo "Price: ".($item['price'] * $item['quantity'])."$ <br /><br />";
 			$total_price += $item['price'] * $item['quantity'];
 		}
 		echo "Total price: ".$total_price."$";
@@ -244,8 +244,8 @@ function replace_basket($products)
 					<button type="submit" name="submit" value=<?= $item['name'] ?>>Update quantity</button>
 					<input type="hidden" name="page" value="product_page">
 				</form>
-				<br />
 				<?php
+				echo "Price: ".($item['price'] * $_SESSION['basket'][$item['name']])."$ <br /><br />";
 				$total_price += $item['price'] * $_SESSION['basket'][$item['name']];
 			}
 		}
