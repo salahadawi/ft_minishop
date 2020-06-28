@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-	<h2>Manage products</h2>
+	<h2>Add new product</h2>
 
 <?php
 
@@ -11,6 +11,27 @@ session_start();
 
 $products = csv_to_array_with_format("products.csv");
 $format = array_shift($products);
+
+if ($_GET['new_item'])
+{
+	foreach ($products as $item)
+	{
+		if ($_GET['name'] === $item['name'])
+		{
+			echo "<script>alert('Product already exists!');</script>";
+			return;
+		}
+	}
+	$new_item['name'] = $_GET['name'];
+	$new_item['price'] = $_GET['price'];
+	$new_item['quantity'] = $_GET['quantity'];
+	$new_item['category'] = $_GET['category'];
+	$products[] = $new_item;
+	$handle = fopen("products.csv", "w");
+	fputcsv($handle, $format);
+	foreach ($products as $item)
+		fputcsv($handle, $item);
+}
 
 if ($_GET['submit'])
 {
@@ -33,10 +54,27 @@ if ($_GET['submit'])
 	$handle = fopen("products.csv", "w");
 	fputcsv($handle, $format);
 	foreach ($products as $item)
-	{
 		fputcsv($handle, $item);
-	}
 }
+?>
+
+<form action="index.php" method="GET">
+		<br /> Name: 
+		<input type="text" name="name">
+		<br /> Price: 
+		<input type="number" name="price" min="1" max="99999">
+		<br /> Quantity in stock:
+		<input type="number" name="quantity" min="1" max="99999">
+		<br /> Category:
+		<input type="text" name="category">
+		<input type="hidden" name="page" value="admin/edit_product">
+		<button type="submit" name="new_item" value="OK">Add product</button>
+</form>
+<br />
+
+<h2>Manage products</h2>
+<?php
+
 
 foreach ($products as $item)
 	{
