@@ -64,9 +64,6 @@ foreach ($products as $item)
 
 ?>
 <html><body>
-	<?php
-	echo "Hello $user!";
-	?>
 	<br />
 	<form action="index.php">
 	Category:
