@@ -16,7 +16,8 @@ if (!$_GET['page'])
 	</head>
 	<body>
 	<header>
-		<h1>The Candy Shop</h1>
+		<img class="fruits" src="img/fuits.png">
+		<h1>Fruits For You!</h1>
 	</header>
 	<div id="main">
 		<div class="side">
