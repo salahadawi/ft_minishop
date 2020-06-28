@@ -9,7 +9,7 @@
 		ul li {
 			background-color: beige;
 			width: 150px;
-			height: 20px;
+			height: 25px;
 			border: 1px solid #434446;
 			text-align: center;
 			float: left;
@@ -29,6 +29,7 @@ $str = file_get_contents($filename);
 $array = unserialize($str);
 
 ?><ul><li style="background-color: pink">Username:</li>
+	<li>Full name:</li>
 	<li>Level:</li>
 	<li>Created:</li>
 	</ul><br /><?php
@@ -36,6 +37,7 @@ $array = unserialize($str);
 foreach ($array as $key => $value)
 {
 	?><ul><li style="background-color: pink"><?=$value['login']?></li>
+	<li><?=$value['fullname']?></li>
 	<li><?=$value['level']?></li>
 	<li><?=$value['date']?></li>
 	</ul><br /><?php
