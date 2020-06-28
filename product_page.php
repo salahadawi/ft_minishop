@@ -99,64 +99,6 @@ foreach ($products as $item)
 		<?php
 		}
 	}
-	echo "Shopping Cart: <br />";
-	if ($_SESSION['logged_on_user'])
-	{
-		$cart = csv_to_array("shopping_carts/".$_SESSION['logged_on_user']."_cart.csv");
-		$total_price = 0;
-		foreach ($cart as $item)
-		{
-			echo $item['name'].", quantity: "
-			?>
-				<form action="index.php" method="GET">
-					<input type="number" name="new_quantity" min="0" max=<?= get_item_max_quantity($products, $item); ?> value=<?= $item['quantity'] ?>>
-					<button type="submit" name="submit" value=<?= $item['name'] ?>>Update quantity</button>
-					<input type="hidden" name="page" value="product_page">
-				</form>
-				<br />
-			<?php
-			$total_price += $item['price'] * $item['quantity'];
-		}
-		echo "Total price: ".$total_price."$";
-	}
-	else
-	{
-		$total_price = 0;
-		foreach ($products as $item)
-		{
-			if ($_SESSION['basket'][$item['name']])
-			{
-				echo $item['name'].", quantity: " ?>
-				<form action="index.php" method="GET">
-					<input type="number" name="new_quantity" min="0" max=<?= $item['quantity'] ?> value=<?= $_SESSION['basket'][$item['name']] ?>>
-					<button type="submit" name="submit" value=<?= $item['name'] ?>>Update quantity</button>
-					<input type="hidden" name="page" value="product_page">
-				</form>
-				<br />
-				<?php
-				$total_price += $item['price'] * $_SESSION['basket'][$item['name']];
-			}
-		}
-		echo "Total price: ".$total_price."$";
-	}
-	if (!file_exists("orders/".$_SESSION['logged_on_user']."_order.csv"))
-		$order_button = "Send order";
-	else
-		$order_button = "Update my order";
-	?>
-		<form action="index.php" method="GET">
-		<button type="submit" name="submit" value="clear">Clear basket</button>
-		<input type="hidden" name="page" value="product_page">
-		</form>
-		<form action="index.php" method="GET">
-		<button type="submit" name="submit" value="order"><?= $order_button ?>
-		</button>
-		<input type="hidden" name="page" value="product_page">
-		</form>
-		<form action="index.php" method="GET">
-		<input type="submit" value="Return" />
-		<input type="hidden" name="page" value="product_page">
-		</form>
-		<?php
+	
 	?>
 </body></html>

@@ -65,7 +65,8 @@ if (!$_GET['page'])
 			<?php
 		}
 		?>
-		<a href="index.php?page=product_page">Basket</a>
+		<br />
+		<a href="index.php?page=product_page">Products</a>
 		</div>
 		<div class="middle">
 		<?php
