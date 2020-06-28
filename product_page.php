@@ -77,15 +77,34 @@ foreach ($products as $item)
 	<input type="hidden" name="page" value="product_page">
 	<input type="submit">
 	</form>
+	<style>
+		.flex-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		}
+
+		.flex-item{
+		padding:1em;
+		}
+
+		.flex-item>img {
+		width: 250px;
+		height: 250px
+		}
+  </style>
 	<?php
+	echo '<div class="flex-container">';
 	foreach ($products as $item)
 	{
 		if (!$_SESSION['category'] || strpos($item['category'], $_SESSION['category']) !== false)
 		{
+			echo "<div class='flex-item'>";
 			echo $item['name']."<br />";
-			echo "Price: ".$item['price']."\n";
-			echo "Quantity: ".$item['quantity']."\n";
-			echo "Category: ".$item['category']."\n";
+			echo "<img src=".$item['image']."><br />";
+			echo "Price: ".$item['price']."\n<br />";
+			echo "Quantity: ".$item['quantity']."\n<br />";
+			echo "Category: ".$item['category']."\n<br />";
 			?>
 			<form action="index.php" method="GET">
 			Amount: 
@@ -93,9 +112,10 @@ foreach ($products as $item)
 			<button type="submit" name="submit" value=<?= $item['name'] ?>>Add to basket</button>
 			<input type="hidden" name="page" value="product_page">
 			</form>
+			</div>
 		<?php
 		}
 	}
-	
 	?>
+	</div>
 </body></html>
