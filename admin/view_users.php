@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h3>View users</h3>
+<h2>View users</h2>
 <?php
 $filename = '../private/passwd';
 $str = file_get_contents($filename);

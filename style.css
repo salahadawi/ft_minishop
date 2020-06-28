@@ -41,6 +41,9 @@ h1 {
 	font-size: 60px;
 	text-align: center;
 }
+h2 {
+	font-family: brevia, sans-serif;
+}
 .fruits {
 	position: absolute;
 	left: 10%;

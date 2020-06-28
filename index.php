@@ -54,9 +54,9 @@ if (!$_GET['page'])
 				<br />
 				<a href="index.php?page=admin/view_users">View users</a>
 				<br />
-				<a href="index.php?page=admin/edit_user">Edit or remove user</a>
+				<a href="index.php?page=admin/edit_user">Manage users</a>
 				<br />
-				<a href="index.php?page=admin/edit_product">Edit or remove product</a>
+				<a href="index.php?page=admin/edit_product">Manage products</a>
 				<br />
 				<?php
 			}
