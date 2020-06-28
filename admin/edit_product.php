@@ -28,7 +28,7 @@ if ($_GET['submit'])
 		}
 	}
 	unset($item);
-	$handle = fopen("../products.csv", "w");
+	$handle = fopen("products.csv", "w");
 	fputcsv($handle, $format);
 	foreach ($products as $item)
 	{
@@ -39,7 +39,7 @@ if ($_GET['submit'])
 foreach ($products as $item)
 	{
 		?>
-		<form action="edit_product.php" method="GET">
+		<form action="index.php" method="GET">
 		<br /> Name: 
 		<input type="text" name="name" value= <?= $item['name'] ?>>
 		<br /> Price: 
@@ -48,6 +48,7 @@ foreach ($products as $item)
 		<input type="number" name="quantity" min="0" max="99999" value= <?= $item['quantity'] ?>>
 		<br /> Category:
 		<input type="text" name="category" value= <?= $item['category'] ?>>
+		<input type="hidden" name="page" value="admin/edit_product">
 		<button type="submit" name="submit" value=<?= $item['name'] ?>>Update product</button>
 		</form>
 		<br />
