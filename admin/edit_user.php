@@ -31,7 +31,7 @@ session_start();
 function del_user($login)
 {
 	
-	$filename = '../private/passwd';
+	$filename = 'private/passwd';
     $str = file_get_contents($filename);
 	$array = unserialize($str);
 	$i = 0;
@@ -57,7 +57,7 @@ function del_user($login)
 
 function change_username($olduser, $newuser)
 {
-	$filename = '../../private/passwd';
+	$filename = 'private/passwd';
     $str = file_get_contents($filename);
 	$array = unserialize($str);
 	$i = 0;
@@ -90,7 +90,7 @@ function change_username($olduser, $newuser)
 
 function make_admin($login)
 {
-	$filename = '../../private/passwd';
+	$filename = 'private/passwd';
     $str = file_get_contents($filename);
 	$array = unserialize($str);
 	$i = 0;

@@ -3,7 +3,7 @@
 <body>
 <h2>View users</h2>
 <?php
-$filename = '../private/passwd';
+$filename = 'private/passwd';
 $str = file_get_contents($filename);
 $array = unserialize($str);
 
