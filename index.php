@@ -209,26 +209,42 @@ function replace_basket($products)
 	unset($_SESSION['basket']);
 }
 
+	
+function check_item_deleted($item, $products)
+{
+	foreach ($products as $product_item)
+	{
+		if ($product_item['name'] == $item['name'])
+			return (0);
+	}
+	$item = NULL;
+	return (1);
+}
+
 	$products = csv_to_array2("products.csv");
 	echo "<h2>Shopping Cart: </h2><br />";
 	if ($_SESSION['logged_on_user'])
-	{	
+	{
 		replace_basket($products);
 		$cart = csv_to_array2("shopping_carts/".$_SESSION['logged_on_user']."_cart.csv");
 		$total_price = 0;
-		foreach ($cart as $item)
+		foreach ($cart as &$item)
 		{
-			echo $item['name'].", quantity: "
-			?>
-				<form action="index.php" method="GET">
-					<input type="number" name="new_quantity" min="0" max=<?= get_item_max_quantity2($products, $item); ?> value=<?= $item['quantity'] ?>>
-					<button type="submit" name="submit" value=<?= $item['name'] ?>>Update quantity</button>
-					<input type="hidden" name="page" value="product_page">
-				</form>
-			<?php
-			echo "Price: ".($item['price'] * $item['quantity'])."$ <br /><br />";
-			$total_price += $item['price'] * $item['quantity'];
+			if (!check_item_deleted($item, $products))
+			{
+				echo $item['name'].", quantity: "
+				?>
+					<form action="index.php" method="GET">
+						<input type="number" name="new_quantity" min="0" max=<?= get_item_max_quantity2($products, $item); ?> value=<?= $item['quantity'] ?>>
+						<button type="submit" name="submit" value=<?= $item['name'] ?>>Update quantity</button>
+						<input type="hidden" name="page" value="product_page">
+					</form>
+				<?php
+				echo "Price: ".($item['price'] * $item['quantity'])."$ <br /><br />";
+				$total_price += $item['price'] * $item['quantity'];
+			}
 		}
+		unset($item);
 		echo "Total price: ".$total_price."$";
 	}
 	else
