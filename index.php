@@ -90,6 +90,17 @@ function csv_to_array2($filename)
 	array_shift($arr);
 	return ($arr);
 }
+
+function	get_item_max_quantity2($products, $cart_item)
+{
+	foreach ($products as $item)
+	{
+		if ($cart_item['name'] == $item['name'])
+			return ($item['quantity']);
+	}
+	return (0);
+}
+
 		$products = csv_to_array2("products.csv");
 		echo "Shopping Cart: <br />";
 	if ($_SESSION['logged_on_user'])
@@ -101,7 +112,7 @@ function csv_to_array2($filename)
 			echo $item['name'].", quantity: "
 			?>
 				<form action="index.php" method="GET">
-					<input type="number" name="new_quantity" min="0" max=<?= get_item_max_quantity($products, $item); ?> value=<?= $item['quantity'] ?>>
+					<input type="number" name="new_quantity" min="0" max=<?= get_item_max_quantity2($products, $item); ?> value=<?= $item['quantity'] ?>>
 					<button type="submit" name="submit" value=<?= $item['name'] ?>>Update quantity</button>
 					<input type="hidden" name="page" value="product_page">
 				</form>
