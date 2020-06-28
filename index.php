@@ -34,10 +34,10 @@ $user = $_SESSION['logged_on_user'] ? $_SESSION['logged_on_user'] : "";
 		{
 			echo "Hello $user!<br>";
 			?>
-			<form action="modif.html">
+			<form action="modif.php">
 				<input type="submit" value="Change password" />
 			</form>
-			<form action="delete.html">
+			<form action="delete.php">
 				<input type="submit" value="Delete user" />
 			</form>
 			<?php
