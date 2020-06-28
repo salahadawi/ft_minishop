@@ -1,0 +1,36 @@
+html {
+	scroll-behavior: smooth;
+}
+* {
+	box-sizing: border-box;
+}
+#main {
+	display: flex;
+	min-height: calc(100vh - 40vh);
+}
+#main > .middle {
+	padding: 1em;
+	flex: 1;
+}
+#main > .side {
+	padding: 1em;
+	flex: 0 0 20vw;
+	background: beige;
+}
+header, footer {
+	padding: 1em;
+	background-color: pink;
+}
+a {
+	text-decoration: wavy;
+	cursor: crosshair;
+	color: #982A15;
+}
+a:visited {
+	color: #982A15;
+}
+a:active {
+	color: #982A15;
+	text-shadow: 1px 1px pink;
+	text-decoration: wavy;
+}

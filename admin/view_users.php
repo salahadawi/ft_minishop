@@ -8,7 +8,7 @@ $str = file_get_contents($filename);
 $array = unserialize($str);
 
 foreach ($array as $key => $value)
-	echo $value['login']."\n";
+	echo $value['login']."<br />";
 ?>
 </body>
 </html>

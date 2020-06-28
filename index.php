@@ -9,32 +9,12 @@ $user = $_SESSION['logged_on_user'] ? $_SESSION['logged_on_user'] : "";
 <html>
 	<head>
 		<title>The Candy Shop</title>
-		<style>
-			* {
-				box-sizing: border-box;
-			}
-			#main {
-				display: flex;
-				min-height: calc(100vh - 40vh);
-			}
-			#main > .middle {
-				padding: 1em;
-				flex: 1;
-			}
-			#main > .side {
-				padding: 1em;
-				flex: 0 0 20vw;
-				background: beige;
-			}
-			header, footer {
-				padding: 1em;
-				background-color: pink;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
 	<header>
-		<p>header</p>
+		<h1>The Candy Shop</h1>
 	</header>
 	<div id="main">
 		<div class="side">
@@ -61,12 +41,15 @@ $user = $_SESSION['logged_on_user'] ? $_SESSION['logged_on_user'] : "";
 			<br />
 			<a href="index.php?page=delete">Delete user</a>
 			<br />
+			<a href="index.php?page=logout">Log out</a>
 			<?php
 			if (is_admin($user))
 			{
 				?>
 				<h3>The Admin Panel</h3>
 				<a href="index.php?page=admin/view_orders">View orders</a>
+				<br />
+				<a href="index.php?page=admin/view_users">View users</a>
 				<br />
 				<a href="index.php?page=admin/edit_user">Edit or remove user</a>
 				<br />
@@ -78,9 +61,6 @@ $user = $_SESSION['logged_on_user'] ? $_SESSION['logged_on_user'] : "";
 			}
 			?>
 			<br />
-			<form action="logout.php">
-				<input type="submit" value="Log out" />
-			</form>
 			<?php
 		}
 		?>
@@ -95,10 +75,10 @@ $user = $_SESSION['logged_on_user'] ? $_SESSION['logged_on_user'] : "";
 		include($page.'.php');
 		?>	
 		</div>
-		<div class="side">side</div>
+		<div class="side"></div>
 	</div>
 	<footer>
-		<p>footer</p>
+		<p></p>
 	</footer>
 	</body>
 </html>
