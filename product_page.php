@@ -66,7 +66,7 @@ foreach ($products as $item)
 <html><body>
 	<br />
 	<form action="index.php">
-	Category:
+	<h2>Category:</h2>
 	<select name="category">
 		<option value="all" selected>All</option>
 		<?php
