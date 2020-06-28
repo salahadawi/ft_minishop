@@ -3,6 +3,8 @@ session_start();
 require_once 'admin/is_admin.php';
 
 $user = $_SESSION['logged_on_user'] ? $_SESSION['logged_on_user'] : "";
+if (!$_GET['page'])
+	$_GET['page'] = "product_page";
 ?>
 
 <!DOCTYPE html>
